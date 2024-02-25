@@ -1,0 +1,21 @@
+sakib@sakib-VirtualBox:/etc/nginx/sites-available$ cat https_demo.conf 
+server {
+    listen 443 ssl;
+    server_name localhost;
+
+    ssl_certificate /etc/nginx/ssl/https_demo.crt;
+    ssl_certificate_key /etc/nginx/ssl/https_demo.key;
+
+    root /var/www/demo;
+    index index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
+
+server {
+    listen 80;
+    server_name localhost;
+    return 301 https://$server_name$request_uri;
+}

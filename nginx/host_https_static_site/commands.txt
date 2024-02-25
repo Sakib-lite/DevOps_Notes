@@ -1,0 +1,6 @@
+sudo ln -s /etc/nginx/sites-available/https_demo.conf /etc/nginx/sites-enabled/https_demo.conf
+
+
+sudo certbot certonly --nginx -d localhost
+
+
