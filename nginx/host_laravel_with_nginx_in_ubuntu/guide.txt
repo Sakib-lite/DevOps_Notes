@@ -1,5 +1,7 @@
 https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-laravel-with-nginx-on-ubuntu-22-04
 
+sudo chown -R www-data.www-data /var/www/travellist/storage
+sudo chown -R www-data.www-data /var/www/travellist/bootstrap/cache
 
 sudo ss -tuln | grep ':80'  // check for processes listening on port
 sudo lsof -i :80 //which processes are using port 80:

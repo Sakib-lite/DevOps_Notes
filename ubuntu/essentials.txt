@@ -1,2 +1,9 @@
 sudo ss -tuln | grep ':80'  // check for processes listening on port
 sudo lsof -i :80 //which processes are using port 80:
+
+sudo systemctl start nginx
+sudo nginx -t
+sudo systemctl reload nginx
+sudo systemctl restart nginx
+sudo nano /var/log/nginx/error.log
+sudo sh -c 'echo "" > /var/log/nginx/error.log'
