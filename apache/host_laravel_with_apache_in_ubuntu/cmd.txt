@@ -1,0 +1,13 @@
+https://techvblogs.com/blog/deploy-laravel-project-apache-ubuntu
+
+sudo systemctl restart apache2
+sudo systemctl reload apache2
+sudo nano /var/log/apache2/error.log 
+sudo nano /etc/apache2/sites-available/laravel_with_ssl_cert.conf
+
+
+//check if php module is being enabled in apache2
+ls /etc/apache2/mods-available | grep php //check if this is empty
+sudo apt install libapache2-mod-php8.1
+sudo a2enmod php8.1
+sudo systemctl restart apache2
