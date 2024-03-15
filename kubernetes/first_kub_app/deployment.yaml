@@ -1,0 +1,23 @@
+apiVersion: apps/v1  # Specifies the API version for the Kubernetes resource being defined.
+kind: Deployment     # Specifies the type of Kubernetes resource being defined, in this case, a Deployment.
+
+metadata:            # Metadata for the Deployment resource.
+  name: first-app-deployment     # Specifies the name of the Deployment.
+
+spec:                # Specifies the desired state for the Deployment.
+  replicas: 1        # Specifies the desired number of replicas (instances) of the Pods managed by this Deployment.
+  selector:          # Specifies how the Deployment identifies which Pods it manages.
+    matchLabels:     # Specifies labels to match for selecting the Pods.
+      app: first-app  # Selects Pods with the label "app: node-app".
+
+  template:          # Specifies the Pod template used to create new Pods managed by this Deployment.
+    metadata:        # Metadata for the Pods created from this template.
+      labels:       # Labels applied to the Pods created from this template.
+        app: first-app  # Label for identifying Pods created by this Deployment.
+    spec:            # Specifies the desired state for the Pods created from this template.
+      containers:    # Specifies the containers to run in the Pods.
+      - name: first-app  # Specifies the name of the container.
+        image: sakib75/first_kube_app:latest # Specifies the Docker image to use for the container.
+        imagePullPolicy: Always 
+        ports:          # Specifies the ports to expose on the container.
+        - containerPort: 8080    # Specifies the port number that the container listens on.

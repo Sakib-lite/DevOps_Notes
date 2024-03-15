@@ -1,0 +1,37 @@
+- minikube start --driver=docker
+
+- minikube config set driver docker
+
+- docker context use default
+
+- kubectl create deployment first-app --image=sakib75/first_kube_app //use remote image.
+
+- kubectl get deployments
+
+- kubectl delete deployment first-app
+
+- kubectl expose deployment first-app --type=LoadBalancer --port=8080
+
+- kubectl get services
+
+- minikube service first-app //run the app
+
+- kubectl delete -n default service first-app
+
+- kubectl set image deployment/first-app  first-kube-app-z2gs6
+=sakib75/first_kube_app
+
+- kubectl rollout status deployment/first-app  //update process for the "first-app" deployment in Kubernetes has completed successfully.
+
+- kubectl rollout undo deployment/first-app //undo the the latest deployment
+
+- kubectl rollout history deployment/first-app --revision=1 //details
+
+- kubectl rollout history deployment/first-app --to-revision=1 //back to revision 1
+
+- kubectl delete -f deployment.yaml
+
+- kubectl apply -f deployment.yaml
+ --- //separator
+
+
