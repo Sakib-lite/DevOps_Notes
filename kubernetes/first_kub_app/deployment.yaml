@@ -8,7 +8,7 @@ spec:                # Specifies the desired state for the Deployment.
   replicas: 1        # Specifies the desired number of replicas (instances) of the Pods managed by this Deployment.
   selector:          # Specifies how the Deployment identifies which Pods it manages.
     matchLabels:     # Specifies labels to match for selecting the Pods.
-      app: first-app  # Selects Pods with the label "app: node-app".
+      app: first-app  # Selects Pods with the label "app: first-app".
 
   template:          # Specifies the Pod template used to create new Pods managed by this Deployment.
     metadata:        # Metadata for the Pods created from this template.
