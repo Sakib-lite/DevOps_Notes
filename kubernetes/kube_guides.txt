@@ -32,6 +32,19 @@
 - kubectl delete -f deployment.yaml
 
 - kubectl apply -f deployment.yaml
- --- //separator
 
+- --- //separator
+
+- kubectl get nodes
+
+- kubectl get sc //storage class
+
+- kubectl get pv //persistant volume
+
+
+
+helm create myapp
+cd myapp
+helm install myapp .
+kubectl get pods
 

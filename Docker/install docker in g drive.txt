@@ -1,0 +1,3 @@
+open terminal as administrator
+
+PS E:\new-downloads> Start-Process -FilePath "Docker Desktop Installer.exe" -ArgumentList 'install', '-accept-license', '--installation-dir="G:\Docker\Docker"', '--wsl-default-data-root="G:\Docker\wsl"', '--windows-containers-default-data-root="G:\Docker"' -Wait

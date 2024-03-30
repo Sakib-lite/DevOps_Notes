@@ -1,0 +1,17 @@
+---HELM
+
+- helm list
+- helm repo list
+
+- helm search hub
+
+- helm search hub mysql
+
+- helm search repo stable
+
+- helm repo add stable REPO_URL
+
+- helm search repo stable/mysql 
+
+- helm create mychart
+- tree .\helloworld\ /F
