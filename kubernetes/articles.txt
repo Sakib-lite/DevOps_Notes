@@ -1,1 +1,3 @@
 https://gcore.com/learning/how-to-install-docker-ubuntu/
+
+https://sysdig.com/blog/understanding-how-kubernetes-services-dns-work/

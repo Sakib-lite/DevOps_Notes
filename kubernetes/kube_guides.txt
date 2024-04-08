@@ -37,14 +37,27 @@
 
 - kubectl get nodes
 
+- kubectl get rc // replication controller
+
 - kubectl get sc //storage class
 
 - kubectl get pv //persistant volume
 
+- kubectl get nodes -v=10 //look for the errors.
 
+- kubectl exec -it pod/nodehelloworld.example.com -- sh //run shell inside a pod
 
-helm create myapp
-cd myapp
-helm install myapp .
-kubectl get pods
+/* example on run shell
 
+/etc # cat resolv.conf
+nameserver 10.96.0.10
+search default.svc.cluster.local svc.cluster.local cluster.local
+options ndots:5
+
+*/
+
+- kubectl get all --all-namespaces
+
+- kubectl create namespace critical-app
+
+- kubectl run -it --image=tutum/curl client --namespace critical-app --restart=Never
