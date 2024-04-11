@@ -1,0 +1,103 @@
+
+Controller Manager
+  Node Controller
+    - Monitoring status of the node every 5s . and keep the application running.
+    - grace period 40s
+    - pod eviction timeout 5m 
+
+  Replication Controller
+    - monitor the status of replica setv
+    - High availibility
+    - run more than one pod at same time. if one crashed,another one will be running
+    - in spec there will be template. on that template again put metadata and spec as child. set number of replicas as sibling of template
+    - 
+  Deployment Controller
+  Stateful Controller
+  Replicaset
+    - define as same as replication controller. add 'selector' as sibling of template
+    - selector is optional. it has labels. it identify what pod fall under it.
+    - kubectl get replicaset
+    - we can scale it. running 'kubectl scale...'
+
+  Cronjob
+  Namespace Controller
+  
+Kube-apiserver
+  Responsible for orchestrating all operations within the cluster
+
+Kubelet
+  - Runs on each node on cluster. listens for instruction from kube api server. kube api server peridiocally fetches status reports from kubelet
+  - captain of the ships. who create pods
+  - Register node 
+  - create pod. 
+  - monitor node and pod
+  - send update of pod to master via api.
+
+KUBE PROXY
+  - Runs on worker node. Backend node and frontend node communicate with kube proxy
+  -
+
+ETCD
+  Distributed reialbe key value storage 
+
+SCHEDULER
+  - Schedules pod and nodes
+  - which pod goes to which node
+  - filter nodes
+  - rank nodes
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

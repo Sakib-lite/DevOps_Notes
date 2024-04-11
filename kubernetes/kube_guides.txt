@@ -61,3 +61,18 @@ options ndots:5
 - kubectl create namespace critical-app
 
 - kubectl run -it --image=tutum/curl client --namespace critical-app --restart=Never
+
+
+- kubectl get pods -o wide 
+
+- kubectl run redis --image=redis123 --dry-run=client -o yaml > redis.yaml
+
+- kubectl scale --replicas=6 -f replicaset.yaml  //file
+
+- kubectl scale --replicas=6 replicaset my-replicaset // type and name
+
+- kubectl delete  replicaset my-replicaset
+
+- kubectl describe replicaset my-replicaset
+
+- kubectl edit rs my-replicaset
