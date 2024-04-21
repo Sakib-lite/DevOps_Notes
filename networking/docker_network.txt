@@ -1,0 +1,24 @@
+ip address show
+docker exec test1 -it sh //ping another container
+
+docker network create test_net
+docker network ls
+docker run -itd --rm --name test3 --network test_net busybox
+bridge link // create container's veth will connect to test_net bridge driver
+docker run -itd --rm --name test3 --network host nginx // now we can access it without defining port. it run's like a application in host. no isolation at all
+
+
+//direct access physical address
+docker network create -d macvlan --subnet=192.168.49.0/24 --gateway=192.168.49.1 -o parent=eno1 macvlan_net
+docker run -it --rm --network=macvlan_net --name test4 busybox
+
+
+
+
+
+
+
+
+
+
+

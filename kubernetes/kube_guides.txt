@@ -65,6 +65,10 @@ options ndots:5
 
 - kubectl get pods -o wide 
 
+- kubectl get pods --selector app=App1
+
+- kubectl get pods --selector env=dev --no headers | wc -l  // number of dev pods. wc -> word count
+
 - kubectl run redis --image=redis123 --dry-run=client -o yaml > redis.yaml
 
 - kubectl scale --replicas=6 -f replicaset.yaml  //file
@@ -76,3 +80,42 @@ options ndots:5
 - kubectl describe replicaset my-replicaset
 
 - kubectl edit rs my-replicaset
+
+- kubectl taint nodes node-name key=value:taint-effect //NoSchedule | PreferNoSchedule | NoExecute
+
+
+- kubectl taint nodes node1 app=myapp:NoSchedule
+ /*
+  tolerations:
+  - key: "app"
+    operator: "Equal"
+    value: "myapp"
+    effect: "NoSchedule"
+*/
+
+- kubectl label nodes <node-name> <label-key>=<label-value> 
+- kubectl label nodes node-1 size=Large 
+
+- kubectl top node //cpu and memory consuption
+
+- kubectl top pod
+
+- kubectl get cm  // configmap
+
+- kubectl drain node1 //unscheduled
+
+- kubectl cordon node1 // doesn't move the pods like drain
+
+- kubectl uncordon node1
+
+- alias k=kubectl
+
+- kubectl get nodes | grep Taints
+
+
+
+
+
+
+
+

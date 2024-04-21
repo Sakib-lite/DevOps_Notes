@@ -45,9 +45,63 @@ SCHEDULER
   - which pod goes to which node
   - filter nodes
   - rank nodes
+  Taint and Toleration
+    - it tells the node only accept pods with toleration. but toleration defined pod can go to any node
+  
+  Node Selector
+    - label node and specify it in node selector in pod. 
+    - the main limitation of it is get the node large or medium / not small  //label:large
 
 
 
+Monitoring
+  Metrics Server
+    - one metrics server per cluster
+    - it retrievs metrics from node and pod , aggregates them and store them in memory
+    - cAdvisor responsible for performance metrics
+    - minikube addons enable metrics-server
+    - 
+
+DEPLOYMENT STRATEGY
+  Recreate
+   - destroys all nginx:1.7.0 pods and re create nginx:1.7.1 pods. has application downtime
+  
+  Rolling Update
+   - doesn't destroys all by once. destroys few and few one. that means application don't go down
+
+
+ENVIRONMENT VARIABLE
+  ConfigMaps
+   - two step. create configmap and inject into pod
+   - four step. apiVersion,metadata,kind,data
+  
+  
+  Secret
+   - used for storing sensitive data
+   - stored in encoded format
+   - echo -n 'password' | base64
+   - can be stored in volume
+   
+
+CLUSTER MAINTAINANCE
+
+  Os Upgrades
+   - if a node goes down and stays 5min. again up and all the pods go to another node. it's called podEvictionTimeout. default is 5 min in kube master
+
+
+SECURITY
+  TLS
+   - when user tries to login it send request in encrypted with key. hacker can decrypt it with the key //asymmetric encryption
+   
+    Asymmetric Encryption
+     - Send private key and public lock(key)  
+     - ssh-keygen //generate id_rsa.key and id_rsa.pub
+     - put public lock to server
+
+
+skipped static pods and multiple scheduler,
+
+point host to dns server
 
 
 
