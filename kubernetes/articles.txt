@@ -1,3 +1,5 @@
 https://gcore.com/learning/how-to-install-docker-ubuntu/
 
 https://sysdig.com/blog/understanding-how-kubernetes-services-dns-work/
+
+https://loft.sh/blog/kubernetes-service-account-what-it-is-and-how-to-use-it/

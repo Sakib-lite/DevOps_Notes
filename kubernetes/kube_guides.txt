@@ -112,8 +112,9 @@ options ndots:5
 
 - kubectl get nodes | grep Taints
 
+- kubectl explain pod
 
-
+- kubectl explain pod.spec
 
 
 
